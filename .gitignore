@@ -29,7 +29,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # Sensitive config
-src/config/config.js
 
 # Ignore uploads if any
 uploads/
