@@ -6,7 +6,7 @@
   background-color: var(--green-50);
   padding: 20px;
 }
-
+ 
 .register-form {
   background: white;
   padding: 2.5rem;
@@ -91,4 +91,43 @@
 
 .login-link-text:hover {
   color: #0056b3;
+}
+
+/* Responsive styles for Register */
+@media (max-width: 600px) {
+  .register-container {
+    padding: 8px;
+  }
+  .register-form {
+    padding: 1.2rem;
+    border-radius: 0.75rem;
+    max-width: 98vw;
+  }
+  .register-form h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  .input-group input,
+  .input-group select {
+    font-size: 0.95rem;
+    padding: 0.6rem 0.8rem;
+  }
+  .register-button {
+    font-size: 0.95rem;
+    padding: 0.6rem;
+  }
+  .login-link {
+    font-size: 0.95rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+  .register-form {
+    padding: 0.7rem;
+    border-radius: 0.5rem;
+  }
+  .register-form h2 {
+    font-size: 1.1rem;
+  }
 }

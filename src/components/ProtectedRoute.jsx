@@ -13,7 +13,7 @@ const ProtectedRoute = ({ children, role }) => {
   if (userRole === 'head' && !role) {
     return <Navigate to="/head/dashboard" />;
   }
-
+ 
   // Check for head-only routes
   if (role === 'head' && userRole !== 'head') {
     return <Navigate to="/dashboard" />;

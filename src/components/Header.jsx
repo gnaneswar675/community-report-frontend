@@ -1,5 +1,6 @@
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { getToken, logout, getUserRole } from '../utils/auth';
+import { useState } from 'react';
 import './header.css';
 
 const Header = () => {
@@ -7,18 +8,21 @@ const Header = () => {
   const location = useLocation();
   const isLoggedIn = getToken();
   const role = getUserRole();
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleLogout = () => {
+  const handleLogout = () => { 
     logout();
     navigate('/', { replace: true });
+    window.location.reload();
   };
 
   const navigateToSection = (sectionId) => {
+    setMenuOpen(false);
     if (location.pathname === '/') {
       const element = document.getElementById(sectionId);
       if (element) {
         window.scrollTo({
-          top: element.offsetTop - 60, // Adjust for header height
+          top: element.offsetTop - 60,
           behavior: 'smooth'
         });
       }
@@ -30,14 +34,19 @@ const Header = () => {
     }
   };
 
-  
-
   return (
     <header className="header">
       <Link to={role === 'head' ? '/head' : '/'} className="header-title">
         Civic Solver
       </Link>
-      <nav className="header-nav">
+      <button
+        className="header-hamburger"
+        aria-label="Toggle menu"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <span className="hamburger-icon"></span>
+      </button>
+      <nav className={`header-nav${menuOpen ? ' open' : ''}`}>
         {!isLoggedIn ? (
           <>
             <button onClick={() => navigateToSection('problems')} className="header-link">Problems</button>

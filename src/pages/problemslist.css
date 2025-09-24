@@ -15,7 +15,7 @@
   
   --gradient-primary: linear-gradient(135deg, #059669, #10b981);
   --gradient-hover: linear-gradient(135deg, #047857, #059669);
-}
+} 
 
 /* Reset and Base Styles */
 * {
@@ -954,6 +954,46 @@ body {
   .footer-bottom-content {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 8px;
+  }
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .features-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .problems-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .dashboard-header {
+    margin-top: 3rem;
+  }
+  .dashboard-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .stat-card {
+    padding: 1rem;
+  }
+  .problem-card {
+    padding: 1rem;
+  }
+  .step {
+    padding: 1rem;
+  }
+  .footer-section {
+    margin-bottom: 1rem;
   }
 }
 

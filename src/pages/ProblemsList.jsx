@@ -15,7 +15,7 @@ const ProblemsList = ({ showLandingPage = true }) => {
   const featuresRef = useRef(null);
   const howItWorksRef = useRef(null);
   const mounted = useRef(false);
-
+ 
   const handleClick = (type) => {
     switch (type) {
       case 'privacy':

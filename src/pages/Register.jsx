@@ -3,18 +3,21 @@ import { useNavigate } from 'react-router-dom';
 import config from '../config/config';
 import './register.css';
 
+
 const Register = () => {
   const [form, setForm] = useState({ username: '', password: '', role: 'citizen' });
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
     setError(''); // Clear error when user makes changes
-  };
+  }; 
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const response = await fetch(`${config.API_BASE_URL}/api/auth/register`, {
         method: 'POST',
@@ -26,8 +29,10 @@ const Register = () => {
         throw new Error('Network response was not ok');
       }
 
+      setLoading(false);
       navigate('/login');
     } catch (error) {
+      setLoading(false);
       setError('Registration failed. Please try again.');
       console.error('Registration failed:', error);
     }
@@ -76,8 +81,8 @@ const Register = () => {
           </span>
         </div>
 
-        <button type="submit" className="register-button">
-          Register
+        <button type="submit" className="register-button" disabled={loading}>
+          {loading ? 'Registering...' : 'Register'}
         </button>
       </form>
     </div>

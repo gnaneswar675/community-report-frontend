@@ -14,7 +14,7 @@ const HeadProblemsList = () => {
     setProblems(data);
   };
 
-
+ 
   return (
     <div className="head-problems-container">
       <div className="dashboard-header">

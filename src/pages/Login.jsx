@@ -11,7 +11,7 @@ const Login = () => {
   const [error, setError] = useState(''); // Added error state
   const location = useLocation();
   const {  action, problemId } = location.state || {};
-
+ 
   useEffect(() => {
     const token = getToken();
     if (token) {

@@ -5,7 +5,7 @@
   min-height: 90vh;
   background: #f7f9fa;
 }
-
+ 
 .report-form {
   background: #fff;
   padding: 32px 28px 24px 28px;
@@ -96,5 +96,51 @@
   to {
     opacity: 1;
     transform: translateX(-50%);
+  }
+}
+
+/* Responsive styles for ReportProblem */
+@media (max-width: 600px) {
+  .report-container {
+    padding: 8px;
+    min-height: 100vh;
+  }
+  .report-form {
+    padding: 1rem;
+    border-radius: 10px;
+    max-width: 98vw;
+  }
+  .report-form h2 {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+  }
+  .input-group input,
+  .input-group textarea,
+  .input-group select {
+    font-size: 0.95rem;
+    padding: 8px 10px;
+  }
+  .submit-button {
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+  .success-popup {
+    padding: 16px 18px;
+    font-size: 1rem;
+    border-radius: 7px;
+  }
+}
+
+@media (max-width: 400px) {
+  .report-form {
+    padding: 0.5rem;
+    border-radius: 7px;
+  }
+  .report-form h2 {
+    font-size: 1rem;
+  }
+  .success-popup {
+    font-size: 0.95rem;
+    padding: 10px 8px;
   }
 }

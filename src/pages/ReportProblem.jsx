@@ -3,11 +3,11 @@ import { createProblem } from '../api/problems';
 import { useNavigate } from 'react-router-dom';
 import './reportproblem.css';
 
-const ReportProblem = () => {
+const ReportProblem = ()=> {
   const [form, setForm] = useState({
     title: '',
     description: '',
-    location: '',
+    location: '', 
     date: '',
     image: null
   });

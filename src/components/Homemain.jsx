@@ -13,7 +13,7 @@ const Home = () => {
     activeUsers: 0,
     recentReports: []
   });
-
+ 
   // Mock data - replace with actual API calls
   useEffect(() => {
     // Simulate API call

@@ -13,7 +13,7 @@ const HeadDashboard = () => {
   // Sorting function
   const sortProblems = (problemsToSort, key) => {
     return [...problemsToSort].sort((a, b) => {
-      if (key === 'votes') {
+      if (key === 'votes') { 
         return b.votes - a.votes; // Always sort votes in descending order
       }
 
